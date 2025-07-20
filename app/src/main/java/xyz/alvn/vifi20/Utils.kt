@@ -60,6 +60,7 @@ fun sendLoginRequest(ctx: Context, username: String, password: String) {
                 if (response.isSuccessful) {
                     Toast.makeText(ctx, "Login successful!", Toast.LENGTH_LONG).show()
                 } else {
+                    Log.e("VIFIDBG", "${response.code} - ${response.message}")
                     val errorMessage = "Login failed: ${response.code} - ${response.message} Response: $responseBody"
                     Toast.makeText(ctx, errorMessage, Toast.LENGTH_LONG).show()
                 }
