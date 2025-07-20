@@ -9,14 +9,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
-import okhttp3.Call // For 'Call'
-import okhttp3.Callback // For 'Callback' interface
-import okhttp3.OkHttpClient // For OkHttpClient class
-import okhttp3.Request // For Request.Builder
-import okhttp3.Response // For Response class
-import okhttp3.MediaType.Companion.toMediaTypeOrNull // Extension function for MediaType
-import okhttp3.RequestBody.Companion.toRequestBody   // Extension function for RequestBody
-import java.io.IOException // For network error handling
+import okhttp3.Call
+import okhttp3.Callback
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.Response
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody.Companion.toRequestBody
+import java.io.IOException
 class MainActivity : AppCompatActivity() {
 
     private lateinit var usernameET: EditText
@@ -43,10 +43,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Encapsulate the button's action in a separate function
-//    private fun sendLoginRequest() {
-//        Toast.makeText(this, "Texts combined successfully!", Toast.LENGTH_SHORT).show()
-//    }
 
     private fun sendLoginRequest() {
         val userId = usernameET.text.toString()
