@@ -1,5 +1,6 @@
 package xyz.alvn.vifi20
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var loginBtn: Button
     private val client = OkHttpClient()
 
+    // Define keys for SharedPreferences
+    private val PREFSNAME = "VIFiLoginPrefs"
+    private val KEYUSERNAME = "username"
+    private val KEYPASSWORD = "password"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,6 +37,9 @@ class MainActivity : AppCompatActivity() {
         usernameET = findViewById(R.id.editTextUsername)
         passwordET = findViewById(R.id.editTextPassword)
         loginBtn = findViewById(R.id.buttonLogin)
+
+        // Load saved credentials when the activity is created
+        loadCredentials()
 
         // Set an OnClickListener for the button
         loginBtn.setOnClickListener {
@@ -41,6 +50,25 @@ class MainActivity : AppCompatActivity() {
         if (intent.getStringExtra("source") == "quick_settings_tile") {
             sendLoginRequest()
         }
+    }
+
+    private fun loadCredentials() {
+        val prefs = getSharedPreferences(PREFSNAME, Context.MODE_PRIVATE)
+        val savedUsername = prefs.getString(KEYUSERNAME, "") // "" is the default value if not found
+        val savedPassword = prefs.getString(KEYPASSWORD, "")
+
+        // Set the loaded credentials to the EditText fields
+        usernameET.setText(savedUsername)
+        passwordET.setText(savedPassword)
+    }
+
+
+    private fun saveCredentials(username: String, password: String) {
+        val prefs = getSharedPreferences(PREFSNAME, Context.MODE_PRIVATE)
+        val editor = prefs.edit()
+        editor.putString(KEYUSERNAME, username)
+        editor.putString(KEYPASSWORD, password)
+        editor.apply() // Apply asynchronously, commit() is synchronous
     }
 
 
@@ -54,6 +82,8 @@ class MainActivity : AppCompatActivity() {
                 .show()
             return // Stop if inputs are empty
         }
+
+        saveCredentials(userId, password)
 
         // Construct the form data as per the curl request
         val requestBodyString = "userId=$userId&password=$password&serviceName=ProntoAuthentication"
