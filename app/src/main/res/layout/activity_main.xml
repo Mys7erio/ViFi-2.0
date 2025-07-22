@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0F2F7"
+    android:background="?android:attr/colorBackground"
     tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        app:cardBackgroundColor="@android:color/white"
+        app:cardBackgroundColor="?attr/colorSurface"
         app:cardCornerRadius="16dp"
         app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,15 +33,15 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="16dp"
-                android:contentDescription="VIFi Logo"
+                android:contentDescription="ViFi Logo"
                 android:src="@drawable/ic_wifi_logo" />
 
-            <!-- VIFi Title -->
+            <!-- ViFi Title -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="VIFi"
-                android:textColor="#3F51B5"
+                android:text="ViFi 2.0"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="32sp"
                 android:textStyle="bold"
             android:layout_marginBottom="4dp"/>
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="32dp"
                 android:text="Automatic WiFi Login"
-                android:textColor="#757575"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="16sp" />
 
             <!-- Username Input -->
@@ -73,8 +73,8 @@
                     android:hint="Enter your username"
                     android:inputType="text"
                     android:padding="12dp"
-                    android:textColor="@android:color/black"
-                    android:textColorHint="#9E9E9E"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textColorHint="?android:attr/textColorHint"
                     android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -97,8 +97,8 @@
                     android:hint="Enter your password"
                     android:inputType="textPassword"
                     android:padding="12dp"
-                    android:textColor="@android:color/black"
-                    android:textColorHint="#9E9E9E"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textColorHint="?android:attr/textColorHint"
                     android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -112,7 +112,7 @@
                 android:paddingBottom="12dp"
                 android:stateListAnimator="@null"
                 android:text="Login"
-                android:textColor="@android:color/white"
+                android:textColor="?attr/colorOnPrimary"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#42A5F5</color> <!-- Desaturated Blue -->
+    <color name="primaryDarkColor">#1976D2</color>
+    <color name="accentColor">#FFC107</color>
+
+    <!-- Custom dark theme colors for better contrast -->
+    <color name="darkModeBackground">#121212</color>
+    <color name="darkModeSurface">#1E1E1E</color>
+</resources>

@@ -29,7 +29,6 @@ class LoginWorker(context: Context, params: WorkerParameters) : Worker(context, 
 }
 
 
-
 fun sendLoginRequest(ctx: Context, username: String, password: String) {
     // Construct the form data as per the curl request
     val requestBodyString = "userId=$username&password=$password&serviceName=ProntoAuthentication"
@@ -120,4 +119,3 @@ fun saveCredentials(ctx: Context, username: String, password: String) {
     editor.putString(KEYPASSWORD, password)
     editor.apply() // Apply asynchronously, commit() is synchronous
 }
-
