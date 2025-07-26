@@ -5,4 +5,6 @@
     <color name="accentColor">#FFC107</color>
     <color name="white">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
+    <color name="darkModeBackground">#FFFFFF</color>
+    <color name="darkModeSurface">#F5F5F5</color>
 </resources>
